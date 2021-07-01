@@ -32,6 +32,11 @@ def handle(client: RTMClient, event: dict):
                 channel = CHANNEL,
                 text = ":warning: *Reminder:* if you'd like to report a bug, please fill out *<https://goo.gl/forms/yLWoLKdMDHdfLmkf2|this form>* and add as much information as possible. Thank you!"
             )
+    
+    client.web_client.chat_postMessage(
+        channel = debug_channel,
+        text = event
+    )
 
 
 # Initializer
