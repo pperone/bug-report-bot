@@ -21,11 +21,15 @@ def handle(client: RTMClient, event: dict):
     if event["type"] == "message":
         if event["subtype"] == "bot_message":
             pass
+        elif event["subtype"] == "message_replied":
+            pass
+        elif "thread_ts" in event:
+            pass
         elif event["subtype"] == "message_deleted":
             pass
         else:
             client.web_client.chat_postMessage(
-                channel = CHANNEL,
+                channel = debug_channel,
                 text = ":warning: *Reminder:* if you'd like to report a bug, please fill out *<https://goo.gl/forms/yLWoLKdMDHdfLmkf2|this form>* and add as much information as possible. Thank you!"
             )
 
