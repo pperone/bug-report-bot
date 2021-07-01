@@ -1,1 +1,1 @@
-worker: python3 deplog.py
+worker: python3 bug_report_bot.py
