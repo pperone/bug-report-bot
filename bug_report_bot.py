@@ -29,7 +29,7 @@ def handle(client: RTMClient, event: dict):
             pass
         else:
             client.web_client.chat_postMessage(
-                channel = debug_channel,
+                channel = CHANNEL,
                 text = ":warning: *Reminder:* if you'd like to report a bug, please fill out *<https://goo.gl/forms/yLWoLKdMDHdfLmkf2|this form>* and add as much information as possible. Thank you!"
             )
 
