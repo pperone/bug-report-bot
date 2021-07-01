@@ -21,6 +21,8 @@ def handle(client: RTMClient, event: dict):
     if event["type"] == "message":
         if event["subtype"] == "bot_message":
             pass
+        elif event["subtype"] == "message_deleted":
+            pass
         else:
             client.web_client.chat_postMessage(
                 channel = CHANNEL,
