@@ -18,11 +18,6 @@ RTM_READ_DELAY = 1
 # Processes the message
 @rtm.on("message")
 def handle(client: RTMClient, event: dict):
-    print(event)
-    print()
-    print('--------------')
-    print()
-
     if event["type"] == "message":
         if event["subtype"] == "bot_message":
             pass
@@ -37,7 +32,7 @@ def handle(client: RTMClient, event: dict):
             pass
         else:
             client.web_client.chat_postMessage(
-                channel = debug_channel,
+                channel = CHANNEL,
                 text = ":warning: *Reminder:* if you'd like to report a bug, please fill out *<https://goo.gl/forms/yLWoLKdMDHdfLmkf2|this form>* and add as much information as possible. Thank you!"
             )
 
