@@ -18,20 +18,14 @@ RTM_READ_DELAY = 1
 # Processes the message
 @rtm.on("message")
 def handle(client: RTMClient, event: dict):
-    print(event)
-
     if event["type"] == "message":
-        if event["subtype"] == "bot_message":
-            pass
-        elif event["subtype"] == "message_replied":
+        if "subtype" in event:
             pass
         elif "thread_ts" in event:
             pass
         elif "message" in event:
             if "thread_ts" in event["message"]:
                 pass
-        elif event["subtype"] == "message_deleted":
-            pass
         else:
             client.web_client.chat_postMessage(
                 channel = CHANNEL,
