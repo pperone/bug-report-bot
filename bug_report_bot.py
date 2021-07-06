@@ -18,6 +18,8 @@ RTM_READ_DELAY = 1
 # Processes the message
 @rtm.on("message")
 def handle(client: RTMClient, event: dict):
+    print(event)
+
     if event["type"] == "message":
         if event["subtype"] == "bot_message":
             pass
