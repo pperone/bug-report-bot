@@ -18,7 +18,7 @@ RTM_READ_DELAY = 1
 # Processes the message
 @rtm.on("message")
 def handle(client: RTMClient, event: dict):
-    mention = "<@" + event["user"] + ">s"
+    mention = "<@" + event["user"] + ">"
 
     if event["type"] == "message":
         if "subtype" in event:
