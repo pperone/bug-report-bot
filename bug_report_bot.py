@@ -31,10 +31,6 @@ def handle(client: RTMClient, event: dict):
         else:
             client.web_client.chat_postMessage(
                 channel = CHANNEL,
-                text = ":warning: *Reminder:* if you'd like to report a bug, please fill out *<https://goo.gl/forms/yLWoLKdMDHdfLmkf2|this form>* and add as much information as possible. Thank you!"
-            )
-            client.web_client.chat_postMessage(
-                channel = CHANNEL,
                 thread_ts = event["ts"],
                 text = "%s: if you'd like to report a bug, please fill out the form at *<https://goo.gl/forms/yLWoLKdMDHdfLmkf2|https://goo.gl/forms/yLWoLKdMDHdfLmkf2>* and add as much information as possible. Thank you!" %(mention)
             )
