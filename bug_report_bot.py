@@ -36,7 +36,6 @@ def handle(client: RTMClient, event: dict):
             # )
             client.web_client.chat_postMessage(
                 channel = DEBUG_CHANNEL,
-                thread_ts = event["ts"],
                 text = event
             )
 
