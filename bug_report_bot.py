@@ -5,7 +5,7 @@ from slack_sdk.rtm_v2 import RTMClient
 
 # Turn this to true for full messages to be sent to debugging Slack channel
 debugging = False
-debug_channel = 'C027DKQ9P5W'
+DEBUG_CHANNEL = 'C027DKQ9P5W'
 
 # Slack setup
 rtm = RTMClient(token=os.environ["BRBOT_TOKEN"])
@@ -29,10 +29,15 @@ def handle(client: RTMClient, event: dict):
             if "thread_ts" in event["message"]:
                 pass
         else:
+            # client.web_client.chat_postMessage(
+            #     channel = CHANNEL,
+            #     thread_ts = event["ts"],
+            #     text = "%s: if you'd like to report a bug, please fill out the form at *<https://goo.gl/forms/yLWoLKdMDHdfLmkf2|https://goo.gl/forms/yLWoLKdMDHdfLmkf2>* and add as much information as possible. Thank you!" %(mention)
+            # )
             client.web_client.chat_postMessage(
-                channel = CHANNEL,
+                channel = DEBUG_CHANNEL,
                 thread_ts = event["ts"],
-                text = "%s: if you'd like to report a bug, please fill out the form at *<https://goo.gl/forms/yLWoLKdMDHdfLmkf2|https://goo.gl/forms/yLWoLKdMDHdfLmkf2>* and add as much information as possible. Thank you!" %(mention)
+                text = event
             )
 
 
