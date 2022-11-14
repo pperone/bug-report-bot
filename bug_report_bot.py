@@ -20,7 +20,7 @@ RTM_READ_DELAY = 1
 def handle(client: RTMClient, event: dict):
     mention = "<@" + event["user"] + ">"
 
-    if event["channel"] == CHANNEL
+    if event["channel"] == CHANNEL:
         if event["type"] == "message":
             if "subtype" in event:
                 pass
