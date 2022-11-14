@@ -29,14 +29,11 @@ def handle(client: RTMClient, event: dict):
             if "thread_ts" in event["message"]:
                 pass
         else:
-            # client.web_client.chat_postMessage(
-            #     channel = CHANNEL,
-            #     thread_ts = event["ts"],
-            #     text = "%s: if you'd like to report a bug, please fill out the form at *<https://goo.gl/forms/yLWoLKdMDHdfLmkf2|https://goo.gl/forms/yLWoLKdMDHdfLmkf2>* and add as much information as possible. Thank you!" %(mention)
-            # )
+            print(event)
             client.web_client.chat_postMessage(
-                channel = DEBUG_CHANNEL,
-                text = event
+                channel = CHANNEL,
+                thread_ts = event["ts"],
+                text = "%s: if you'd like to report a bug, please fill out the form at *<https://goo.gl/forms/yLWoLKdMDHdfLmkf2|https://goo.gl/forms/yLWoLKdMDHdfLmkf2>* and add as much information as possible. Thank you!" %(mention)
             )
 
 
