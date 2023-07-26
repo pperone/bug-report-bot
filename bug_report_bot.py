@@ -33,7 +33,7 @@ def handle(client: RTMClient, event: dict):
                 client.web_client.chat_postMessage(
                     channel = CHANNEL,
                     thread_ts = event["ts"],
-                    text = "%s: if you'd like to report a bug, please fill out the form at *<https://goo.gl/forms/yLWoLKdMDHdfLmkf2|https://goo.gl/forms/yLWoLKdMDHdfLmkf2>* and add as much information as possible. Thank you!" %(mention)
+                    text = "%s: if you'd like to report a bug, please fill out the form at *<https://forms.gle/fMSBJDBq3FUQTFpdA>* and add as much information as possible. Thank you!" %(mention)
                 )
 
 
